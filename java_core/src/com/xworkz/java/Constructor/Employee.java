@@ -12,10 +12,10 @@ public class Employee {
     }
 	void details()
 	{
-		System.out.println("Employee Name :"+id);
-		System.out.println("Employee Id :"+name);
+		System.out.println("Employee Name :"+name);
+		System.out.println("Employee ID :"+id);
 		System.out.println("Employee Salary :"+salary);
-		System.out.println("**************");
+		System.out.println("---------------");
 	}
 	public static void main(String[] args) {
 		Employee e1 = new Employee(123,"Ajay",25000.98);
@@ -23,7 +23,7 @@ public class Employee {
 		Employee e3 = new Employee(789,"kohli",250000.05);
 		
 		System.out.println("Employee Details");
-		System.out.println("-----------------");
+		System.out.println("*******************");
 		e1.details();
 		e2.details();
 		e3.details();

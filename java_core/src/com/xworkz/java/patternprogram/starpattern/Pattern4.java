@@ -1,4 +1,4 @@
-package com.xworkz.java.patternprogram;
+package com.xworkz.java.patternprogram.starpattern;
 
 public class Pattern4 {
 	public static void main(String[] args) {

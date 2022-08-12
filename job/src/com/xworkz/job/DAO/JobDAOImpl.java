@@ -14,7 +14,7 @@ import com.xworkz.job.constants.DBProperties.*;
 import com.xworkz.job.constants.JobDesignation;
 import com.xworkz.job.constants.Qualification;
 
-public class JobDAOImpl implements JobDAO {
+public abstract class JobDAOImpl implements JobDAO {
 
 	@Override
 	public boolean save(JobDTO jobDTO) {
@@ -75,13 +75,6 @@ public class JobDAOImpl implements JobDAO {
 //				jobDTO.setPercentage(percentage);
 //				jobDTO.setFresher(fresher);
 //				return jobDTO;
-			
-				
-				
-				
-			
-		
-			
 		} catch (SQLException e) {
 			System.out.println("no data found");
 			e.printStackTrace();

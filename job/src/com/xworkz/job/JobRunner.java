@@ -35,11 +35,11 @@ public class JobRunner {
 		jobDTO.setPercentage(78);
 		jobDTO.setFresher("Yes");
 	
-		JobDAO dao=new JobDAOImpl();
+		//JobDAO dao=new JobDAOImpl();
      	//dao.save(jobDTO);
      	//dao.save(jobDTO2);
      	//dao.save(jobDTO3);
-		dao.getByID(1);
+		//dao.getByID(1);
 		
 		
 	}

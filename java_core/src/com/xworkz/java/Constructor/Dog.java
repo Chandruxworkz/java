@@ -6,7 +6,7 @@ public class Dog {
 		System.out.println("name: "+name);
 	}
 public static void main(String[] args) {
-	Dog d = new Dog("Labroder");
+	Dog dog = new Dog("Labroder");
 }
 
 }

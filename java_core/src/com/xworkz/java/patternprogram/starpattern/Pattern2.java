@@ -1,4 +1,4 @@
-package com.xworkz.java.patternprogram;
+package com.xworkz.java.patternprogram.starpattern;
 
 public class Pattern2 {
 	public static void main(String[] args) {
@@ -6,7 +6,7 @@ public class Pattern2 {
 		{
 			for(int j=4;j>=i;j--)
 			{
-				System.out.print("*");
+				System.out.print(j);
 			}
 			System.out.println();
 		}

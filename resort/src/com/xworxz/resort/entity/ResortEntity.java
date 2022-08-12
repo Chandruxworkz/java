@@ -9,9 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
-
 @Data
-
 @Entity
 @Table(name="resort_info")
 public class ResortEntity {
@@ -27,7 +25,7 @@ public class ResortEntity {
 	private LocalTime checkInTime;
 	@Column(name="checkOutTime")
 	private LocalTime checkOutTime;
-	@Column(name="createBy")
+	@Column(name="createdBy")
 	private String createBy;
 	@Column(name="createDate")
 	private LocalDate createDate;
