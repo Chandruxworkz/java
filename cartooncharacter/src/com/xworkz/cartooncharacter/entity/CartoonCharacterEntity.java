@@ -24,9 +24,14 @@ import lombok.ToString;
 
 @Table(name= "cartooncharacter_info")
 @NamedQueries({
-		//@NamedQuery(name = "findByName", query = "select cartoon from CartoonCharacterEntity cartoon where cartoon.name=:name"),
-		//@NamedQuery(name = "findByNameAndCountryAndGenderAndAuthor", query ="select cartoon from CartoonCharacterEntity cartoon where cartoon.name=:nm"),
-		@NamedQuery(name = "findAuthorByName", query ="select cartoon.author from CartoonCharacterEntity cartoon where cartoon.name=:an")
+//		@NamedQuery(name = "findByName", query = "select cartoon from CartoonCharacterEntity cartoon where cartoon.name=:name"),
+//		@NamedQuery(name = "findByNameAndCountryAndGenderAndAuthor", query ="select cartoon from CartoonCharacterEntity cartoon where cartoon.name=:nm"),
+//		@NamedQuery(name = "findAuthorByName", query ="select cartoon.author from CartoonCharacterEntity cartoon where cartoon.name=:an"),
+//		@NamedQuery(name = "findNameAndCountryByAuthor",query = "select cartoon.name, cartoon.country from CartoonCharacterEntity cartoon where cartoon.author=:at"),
+//		@NamedQuery(name = "findCreatedDateByAuthor",query = "select cartoon.createddate from CartoonCharacterEntity cartoon where cartoon.author= :au"),
+		
+		@NamedQuery(name="updateAuthor", query="update CartoonCharacterEntity c set c.author=:at where c.name=:nm")
+		
 })
 
 public class CartoonCharacterEntity extends ParentEntity {

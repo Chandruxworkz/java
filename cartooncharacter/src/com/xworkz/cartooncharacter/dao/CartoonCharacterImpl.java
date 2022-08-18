@@ -2,6 +2,8 @@ package com.xworkz.cartooncharacter.dao;
 
 import static com.xworkz.cartooncharacter.util.Factory.getFactory;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -109,6 +111,68 @@ public class CartoonCharacterImpl implements CartoonCharacterDAO {
 			manager.close();
 		}
 		return null;
+	}
+
+	@Override
+	public Object[] findNameAndCountryByAuthor(String author) {
+		EntityManager manager = factory.createEntityManager();		
+		try {
+			manager = factory.createEntityManager();
+			Query query = manager.createNamedQuery("findNameAndCountryByAuthor");
+			query.setParameter("at", author);
+			Object obj = query.getSingleResult();
+				Object[] cartoon = (Object[]) obj;
+				return cartoon;
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			manager.close();
+		}
+		return null;
+	}
+
+	@Override
+	public LocalDate findCreatedDateByAuthor(String author) {
+		EntityManager manager = factory.createEntityManager();	
+		try {
+			manager = factory.createEntityManager();
+			Query query = manager.createNamedQuery("findCreatedDateByAuthor");
+			query.setParameter("au", author);
+			Object obj = query.getSingleResult();
+			if (obj != null) {
+				LocalDate cartoon = (LocalDate) obj;
+				return cartoon;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			manager.close();
+		}
+		return null;
+	}
+
+	@Override
+	public void updateAuthorByName(String newAuthor, String name) {
+		EntityManager manager = factory.createEntityManager();			
+		try {
+			manager = factory.createEntityManager();
+			Query query = manager.createNamedQuery("updateAuthor");
+			query.setParameter("nm", name);
+			query.setParameter("at", name);
+			Object obj = query.getSingleResult();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			manager.close();
+		}
+		
 	}
 }
 

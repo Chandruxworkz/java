@@ -1,6 +1,7 @@
 package com.xworkz.cartooncharacter.runner;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,8 +60,16 @@ public class CartoonCharacterRunner {
 //	System.out.println(INF);
 //	CartoonCharacterEntity	x=dao.findByNameAndCountryAndGenderAndAuthor("Doremon", "USA", "Male", "Arpita");
 //	System.out.println(x);
-	String	y=dao.findAuthorByName("Doremon");
-	System.out.println(y);
+//	String	y=dao.findAuthorByName("Doremon");
+//	System.out.println(y);
+//	Object[]z=dao.findNameAndCountryByAuthor("Sharat");
+//	System.out.println(z[0]);
+//	System.out.println(z[1]);
+//LocalDate	v=dao.findCreatedDateByAuthor("Sharat");
+//	System.out.println(v);
+	dao.updateAuthorByName("Arjun", "Sharat");
+//	dao.updateAuthorByName("Nandish", "Doremon");
+	
 	}
 
 }
