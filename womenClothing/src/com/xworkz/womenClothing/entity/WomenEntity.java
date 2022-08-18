@@ -38,12 +38,4 @@ public class WomenEntity {
 	private String owner;
 	@Column(name="pricePerDay")
 	private double pricePerDay;
-	
-	
-	
-	
-	
-	
-	
-
 } 

@@ -13,7 +13,7 @@ public class CatRunner {
 		entity.setName("gowri");
 		entity.setBreed("lab");
 		entity.setAge(1);
-		entity.setBirthYear(2020);
+		entity.setBirthYear(2);
 		entity.setClothType("normal");
 		
 	CatDAO dao=new CatDAOImpl();
