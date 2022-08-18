@@ -1,6 +1,5 @@
 package com.xworkz.cartooncharacter.entity;
 
-
 import java.time.LocalDate;
 
 import javax.persistence.*;
@@ -19,21 +18,26 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+@ToString(callSuper = true)
 @Entity
-
-@Table(name= "cartooncharacter_info")
+@Table(name = "cartooncharacter_info")
 @NamedQueries({
-//		@NamedQuery(name = "findByName", query = "select cartoon from CartoonCharacterEntity cartoon where cartoon.name=:name"),
-//		@NamedQuery(name = "findByNameAndCountryAndGenderAndAuthor", query ="select cartoon from CartoonCharacterEntity cartoon where cartoon.name=:nm"),
-//		@NamedQuery(name = "findAuthorByName", query ="select cartoon.author from CartoonCharacterEntity cartoon where cartoon.name=:an"),
-//		@NamedQuery(name = "findNameAndCountryByAuthor",query = "select cartoon.name, cartoon.country from CartoonCharacterEntity cartoon where cartoon.author=:at"),
-//		@NamedQuery(name = "findCreatedDateByAuthor",query = "select cartoon.createddate from CartoonCharacterEntity cartoon where cartoon.author= :au"),
-		
-		@NamedQuery(name="updateAuthor", query="update CartoonCharacterEntity c set c.author=:at where c.name=:nm")
-		
-})
+		@NamedQuery(name = "findByName", query = "select cartoon from CartoonCharacterEntity cartoon where cartoon.name=:name"),
+		@NamedQuery(name = "findByNameAndCountryAndGenderAndAuthor", query = "select cartoon from CartoonCharacterEntity cartoon where cartoon.name=:nm"),
+		@NamedQuery(name = "findAuthorByName", query = "select cartoon.author from CartoonCharacterEntity cartoon where cartoon.name=:an"),
+		@NamedQuery(name = "findNameAndCountryByAuthor", query = "select cartoon.name, cartoon.country from CartoonCharacterEntity cartoon where cartoon.author=:at"),
+		@NamedQuery(name = "findCreatedDateByAuthor", query = "select cartoon.createddate from CartoonCharacterEntity cartoon where cartoon.author= :au"),
 
+		@NamedQuery(name = "updateAuthor", query = "update CartoonCharacterEntity c set c.author=:at where c.name=:nm"),
+		@NamedQuery(name = "findAllByAuthor", query = "select cc from  CartoonCharacterEntity cc where cc.author=:au"),
+		@NamedQuery(name = "findAllByAuthorAndGender", query = "select cc from  CartoonCharacterEntity cc where cc.author=:au and cc.gender=:ge"),
+		@NamedQuery(name = "findAllCountry", query = "select cc.country from CartoonCharacterEntity cc"),
+		@NamedQuery(name = "findAllNameAndCountry", query = "select cc.name,cc.country  from CartoonCharacterEntity cc"),
+		@NamedQuery(name = "findAllName", query = "select cc.name from CartoonCharacterEntity cc"),
+		@NamedQuery(name = "findAll", query = "select cc from CartoonCharacterEntity cc"),
+		@NamedQuery(name = "findAllNameAndCountryAndAuthor", query = "select cc.name,cc.country,cc.author  from CartoonCharacterEntity cc")
+
+})
 public class CartoonCharacterEntity extends ParentEntity {
 	@GenericGenerator(name = "Ajay", strategy = "increment")
 	@GeneratedValue(generator = "Ajay")

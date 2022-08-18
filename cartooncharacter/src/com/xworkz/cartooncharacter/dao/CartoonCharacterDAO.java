@@ -17,5 +17,16 @@ public interface CartoonCharacterDAO {
 	 Object[] findNameAndCountryByAuthor(String author);
 	 LocalDate findCreatedDateByAuthor(String author);
 	 void updateAuthorByName(String newAuthor,String name);
+	 
+	 
+	 List<CartoonCharacterEntity>findAllByAuthor(String Author);
+	 List<CartoonCharacterEntity> findAllByAuthorAndGender(String author,String gender);
+	 List<String> findAllCountry();
+	 List<Object> findAllNameAndCountry();
+	 List<String> findAllName();
+	 List<CartoonCharacterEntity> findAll();
+	 List<Object[]> findAllNameAndCountryAndAuthor();
+	 
+
 
 }

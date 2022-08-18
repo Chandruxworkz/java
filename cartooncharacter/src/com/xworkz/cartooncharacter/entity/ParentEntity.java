@@ -6,14 +6,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @MappedSuperclass
 @AllArgsConstructor
-
-
+@ToString
 public class ParentEntity {
 	
 	private String createdby;
