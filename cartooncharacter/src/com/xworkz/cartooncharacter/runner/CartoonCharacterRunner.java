@@ -30,6 +30,7 @@ public class CartoonCharacterRunner {
 		CartoonCharacterEntity entity9 = new CartoonCharacterEntity("Barbie", "USA", "Female", "C", "Animation",
 				"Sharan", LocalDate.now(), "Chandru", LocalDate.now());
 		CartoonCharacterEntity entity10 = new CartoonCharacterEntity("Barbie the 12 dancing pricess", "USA", "Female",
+		
 				"Arpita", "Animation", "Sharan", LocalDate.now(), "Chandru", LocalDate.now());
 		CartoonCharacterDAO dao = new CartoonCharacterImpl();
 		/*
@@ -41,27 +42,30 @@ public class CartoonCharacterRunner {
 		 * 
 		 * dao.addAll(entities);
 		 */
-//	CartoonCharacterEntity	INF=dao.findByName("BEN-10");
-//	System.out.println(INF);
-//	CartoonCharacterEntity	x=dao.findByNameAndCountryAndGenderAndAuthor("Doremon", "USA", "Male", "Arpita");
-//	System.out.println(x);
-//	String	y=dao.findAuthorByName("Doremon");
-//	System.out.println(y);
-//	Object[]z=dao.findNameAndCountryByAuthor("Sharat");	System.out.println(z[0]);
-//	System.out.println(z[1]);
-//LocalDate	v=dao.findCreatedDateByAuthor("Sharat");
-//	System.out.println(v);
-//	dao.updateAuthorByName("Arjun", "Chotabheem");
-//	dao.updateAuthorByName("Nandish", "Doremon");
-//	dao.findAllByAuthor("Arjun").forEach(System.out::println);
-//	dao.findAllByAuthorAndGender("Sharat", "Male").forEach(System.out::println);
-//	
-//	dao.findAllCountry().forEach(System.out::println);
-//	dao.findAllNameAndCountry();
-//	dao.findAllName().forEach(System.out::println);
-		// dao.findAll().forEach(System.out::println);
-//		dao.findAllNameAndCountryAndAuthor().forEach(obj -> System.out.println(obj[0] + "::" + obj[1] + "::" + obj[2]));
+		CartoonCharacterEntity INF = dao.findByName("BEN-10");
+		System.out.println(INF);
+		CartoonCharacterEntity x = dao.findByNameAndCountryAndGenderAndAuthor("Doremon", "USA", "Male", "Arpita");
+		System.out.println(x);
+		String y = dao.findAuthorByName("Doremon");
+		System.out.println(y);
+		Object[] z = dao.findNameAndCountryByAuthor("Sharat");
+		System.out.println(z[0]);
+		System.out.println(z[1]);
+		LocalDate v = dao.findCreatedDateByAuthor("Sharat");
+		System.out.println(v);
+		dao.updateAuthorByName("Arjun", "Chotabheem");
+		dao.updateAuthorByName("Nandish", "Doremon");
+		dao.findAllByAuthor("Arjun").forEach(System.out::println);
+		dao.findAllByAuthorAndGender("Sharat", "Male").forEach(System.out::println);
+
+		dao.findAllCountry().forEach(System.out::println);
+		dao.findAllNameAndCountry();
+		dao.findAllName().forEach(System.out::println);
+		dao.findAll().forEach(System.out::println);
 		dao.findAllNameAndCountryAndAuthor().forEach(obj -> System.out.println(obj[0] + "::" + obj[1] + "::" + obj[2]));
+		dao.findAllNameAndCountryAndAuthor().forEach(obj -> System.out.println(obj[0] + "::" + obj[1] + "::" + obj[2]));
+		dao.updateTypeByName("Doremon", "Cartoon");
+		dao.deleteByName("oggy and the cockroches");
 	}
 
 }

@@ -3,12 +3,12 @@ package com.xworkz.cartooncharacter.dao;
 import static com.xworkz.cartooncharacter.util.Factory.getFactory;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
 import com.xworkz.cartooncharacter.entity.CartoonCharacterEntity;
@@ -312,5 +312,46 @@ public class CartoonCharacterImpl implements CartoonCharacterDAO {
 			manager.close();
 			return null;
 		}
+	}
+
+	@Override
+	public void updateTypeByName(String name, String type) {
+		EntityManager manager = factory.createEntityManager();
+		try {
+			manager = factory.createEntityManager();
+			EntityTransaction transaction = manager.getTransaction();
+			transaction.begin();
+			Query query = manager.createNamedQuery("updateTypeByName");
+			query.setParameter("name", name);
+			query.setParameter("type", type);
+			query.executeUpdate();
+			transaction.commit();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			manager.close();
+		}
+		
+	}
+
+	@Override
+	public void deleteByName(String name) {
+		EntityManager manager = factory.createEntityManager();
+		try {
+			manager = factory.createEntityManager();
+			EntityTransaction tx = manager.getTransaction();
+			tx.begin();
+			Query query = manager.createNamedQuery("deleteByName");
+			query.setParameter("dname", name);
+			query.executeUpdate();
+			System.out.println("The Deleted Name Of Row of Table is :" + name);
+			tx.commit();
+		} catch (PersistenceException p) {
+			p.printStackTrace();
+		} finally {
+			manager.close();
+		}		
 	}
 }

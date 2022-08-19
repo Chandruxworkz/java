@@ -1,7 +1,6 @@
 package com.xworkz.cartooncharacter.dao;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import com.xworkz.cartooncharacter.entity.CartoonCharacterEntity;
@@ -18,6 +17,8 @@ public interface CartoonCharacterDAO {
 	 LocalDate findCreatedDateByAuthor(String author);
 	 void updateAuthorByName(String newAuthor,String name);
 	 
+
+	 
 	 
 	 List<CartoonCharacterEntity>findAllByAuthor(String Author);
 	 List<CartoonCharacterEntity> findAllByAuthorAndGender(String author,String gender);
@@ -25,7 +26,11 @@ public interface CartoonCharacterDAO {
 	 List<Object> findAllNameAndCountry();
 	 List<String> findAllName();
 	 List<CartoonCharacterEntity> findAll();
-	 List<Object[]> findAllNameAndCountryAndAuthor();
+	// List<Object[]> findAllNameAndCountryAndAuthor();
+	 
+	 void updateTypeByName(String name,String type);
+	 void deleteByName(String name);
+	 
 	 
 
 
