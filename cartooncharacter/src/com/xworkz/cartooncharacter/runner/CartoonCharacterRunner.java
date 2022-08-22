@@ -54,7 +54,7 @@ public class CartoonCharacterRunner {
 		LocalDate v = dao.findCreatedDateByAuthor("Sharat");
 		System.out.println(v);
 		dao.updateAuthorByName("Arjun", "Chotabheem");
-		dao.updateAuthorByName("Nandish", "Doremon");
+		//dao.updateAuthorByName("Nandish", "Doremon");
 		dao.findAllByAuthor("Arjun").forEach(System.out::println);
 		dao.findAllByAuthorAndGender("Sharat", "Male").forEach(System.out::println);
 
@@ -62,7 +62,7 @@ public class CartoonCharacterRunner {
 		dao.findAllNameAndCountry();
 		dao.findAllName().forEach(System.out::println);
 		dao.findAll().forEach(System.out::println);
-		dao.findAllNameAndCountryAndAuthor().forEach(obj -> System.out.println(obj[0] + "::" + obj[1] + "::" + obj[2]));
+		dao.findAllNameAndCountry().forEach(obj -> System.out.println());
 		dao.findAllNameAndCountryAndAuthor().forEach(obj -> System.out.println(obj[0] + "::" + obj[1] + "::" + obj[2]));
 		dao.updateTypeByName("Doremon", "Cartoon");
 		dao.deleteByName("oggy and the cockroches");

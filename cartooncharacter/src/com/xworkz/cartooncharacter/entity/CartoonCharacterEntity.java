@@ -35,7 +35,7 @@ import lombok.ToString;
 		@NamedQuery(name = "findAllNameAndCountry", query = "select cc.name,cc.country  from CartoonCharacterEntity cc"),
 		@NamedQuery(name = "findAllName", query = "select cc.name from CartoonCharacterEntity cc"),
 		@NamedQuery(name = "findAll", query = "select cc from CartoonCharacterEntity cc"),
-		//@NamedQuery(name = "findAllNameAndCountryAndAuthor", query = "select cc.name,cc.country,cc.author  from CartoonCharacterEntity cc"),
+		@NamedQuery(name = "findAllNameAndCountryAndAuthor", query = "select cc.name,cc.country,cc.author  from CartoonCharacterEntity cc"),
 		@NamedQuery(name = "updateTypeByName", query = "update CartoonCharacterEntity cartoon set cartoon.type =:type where cartoon.name = :name"),
 		@NamedQuery(name = "deleteByName", query = "delete from CartoonCharacterEntity cartoon where cartoon.name = :dname"),
 

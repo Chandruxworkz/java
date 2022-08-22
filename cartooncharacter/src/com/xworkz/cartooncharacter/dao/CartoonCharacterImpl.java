@@ -231,27 +231,28 @@ public class CartoonCharacterImpl implements CartoonCharacterDAO {
 		return null;
 	}
 
-	@Override
-	public List<Object> findAllNameAndCountry() {
-		EntityManager manager = factory.createEntityManager();
-		try {
-			Query query = manager.createNamedQuery("findAllNameAndCountry");
-
-			List<Object[]> obj = query.getResultList();
-			obj.forEach(objt -> System.out.println(objt[0] + "::" + objt[1]));
-
-			if (obj != null) {
-
-				return null;
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			manager.close();
-		}
-		return null;
-	}
+//	@Override
+//	public List<Object> findAllNameAndCountry() {
+//		EntityManager manager = null;
+//		try {
+//		 manager = factory.createEntityManager();
+//			Query query = manager.createNamedQuery("findAllNameAndCountry");
+//
+//			List<Object[]> obj = query.getResultList();
+//		//	obj.forEach(objt -> System.out.println(objt[0] + "::" + objt[1]));
+//
+//			if (obj != null) {
+//
+//				return null;
+//			}
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			manager.close();
+//		}
+//		return null;
+//	}
 
 	@Override
 	public List<String> findAllName() {
@@ -312,7 +313,7 @@ public class CartoonCharacterImpl implements CartoonCharacterDAO {
 			manager.close();
 			return null;
 		}
-	}
+	}//findAllNameAndCountry  findAllNameAndCountryAndAuthor
 
 	@Override
 	public void updateTypeByName(String name, String type) {
@@ -352,6 +353,27 @@ public class CartoonCharacterImpl implements CartoonCharacterDAO {
 			p.printStackTrace();
 		} finally {
 			manager.close();
-		}		
+		}
+		
 	}
+	@Override
+	public List<Object> findAllNameAndCountry() {
+		EntityManager manager = null;
+		try {
+		 manager = factory.createEntityManager();
+		Query query= manager.createNamedQuery("findAllNameAndCountry");
+		Object obj=query.getResultList();
+		if (obj !=null) {
+			return obj;
+			
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			
+		}
+		return CartoonCharacterDAO.super.findAllNameAndCountry();
+	}
+	
 }
